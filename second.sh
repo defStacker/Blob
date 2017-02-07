@@ -61,7 +61,7 @@ if [ -n "$OPENEDX_RELEASE" ]; then
   "
   CONFIG_VER=$OPENEDX_RELEASE
 else
-  CONFIG_VERt="master-str"
+  CONFIG_VER=$OPENEDX_RELEASE
 fi
 
 
