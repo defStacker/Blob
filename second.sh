@@ -41,8 +41,7 @@ sudo -H pip install --upgrade virtualenv==15.0.2
 ## individually, or with $OPENEDX_RELEASE.
 ##
 export OPENEDX_RELEASE="open-release/ficus.master"
-export ECOMMERCE="release-2017-01-31"
-export ECOMMERCEWORKER="release-2016-11-01"
+
  
 
 
@@ -55,9 +54,9 @@ if [ -n "$OPENEDX_RELEASE" ]; then
     -e demo_version=$OPENEDX_RELEASE \
     -e NOTIFIER_VERSION=$OPENEDX_RELEASE \
     -e INSIGHTS_VERSION=$OPENEDX_RELEASE \
-	-e ANALYTICS_API_VERSION=$OPENEDX_RELEASE \
-    -e ECOMMERCE_VERSION=$ECOMMERCE \
-    -e ECOMMERCE_WORKER_VERSION=$ECOMMERCEWORKER \
+    -e ANALYTICS_API_VERSION=$OPENEDX_RELEASE \
+    -e ECOMMERCE_VERSION=$OPENEDX_RELEASE \
+    -e ECOMMERCE_WORKER_VERSION=$OPENEDX_RELEASE \
     -e PROGRAMS_VERSION=$OPENEDX_RELEASE \
   "
   CONFIG_VER=$OPENEDX_RELEASE
@@ -71,7 +70,7 @@ fi
 ## Clone the configuration repository and run Ansible
 ##
 cd /var/tmp
-git clone https://github.com/edx/configuration
+git clone https://github.com/defStacker/configuration
 cd configuration
 git checkout $CONFIG_VER
 git pull
