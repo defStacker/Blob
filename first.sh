@@ -1,20 +1,12 @@
 #!/usr/bin/env bash
 
 #
-# Script for installing Ansible and the edX configuration repostory
-# onto a host to enable running ansible to complete configuration.
-# This script can be used by Docker, Packer or any other system
-# for building images that requires having ansible available.
-#
-# Can be run as follows:
-#
-# UPGRADE_OS=true CONFIGURATION_VERSION="master" \
-# bash <(curl -s https://raw.githubusercontent.com/edx/configuration/master/util/install/ansible-bootstrap.sh)
+
 export OPENEDX_RELEASE="open-release/ficus.master"
 set -xe
 
 if [[ -z "${ANSIBLE_REPO}" ]]; then
-  ANSIBLE_REPO="https://github.com/edx/ansible.git"
+  ANSIBLE_REPO="https://github.com/defStacker/ansible.git"
 fi
 
 if [[ -z "${ANSIBLE_VERSION}" ]]; then
@@ -22,7 +14,7 @@ if [[ -z "${ANSIBLE_VERSION}" ]]; then
 fi
 
 if [[ -z "${CONFIGURATION_REPO}" ]]; then
-  CONFIGURATION_REPO="https://github.com/edx/configuration.git"
+  CONFIGURATION_REPO="https://github.com/defStacker/configuration.git"
 fi
 
 if [[ -z "${CONFIGURATION_VERSION}" ]]; then
